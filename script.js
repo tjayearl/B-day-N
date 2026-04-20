@@ -169,7 +169,7 @@ function nextMessage() {
 
         // Show Spotify player at "Before anything..."
         if (index === 1 && spotify) {
-            spotify.style.display = "block";
+            spotify.classList.add("show-player");
         }
 
         index++;

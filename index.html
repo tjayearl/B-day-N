@@ -16,12 +16,15 @@
         <h1 id="mainTitle">Hey Nila 👋</h1>
         <p id="displayMessage">Click below to begin</p>
 
-        <div id="memoryPlayer" style="display: none; margin-top: 20px;">
+        <div id="memoryPlayer" class="hidden-player">
             <iframe style="border-radius:12px" 
                 src="https://open.spotify.com/embed/track/1aHy1ipWQRNauI0ee9uYfi" 
-                width="100%" height="80" frameBorder="0" 
+                width="100%" height="152" frameBorder="0" 
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
             </iframe>
+            <a href="https://open.spotify.com/track/1aHy1ipWQRNauI0ee9uYfi" target="_blank" style="text-decoration: none;">
+                <button style="margin-top: 10px; font-size: 0.8em; padding: 8px 15px;">Open in Spotify 🎧</button>
+            </a>
         </div>
 
         <button id="actionBtn" onclick="nextMessage()">Start</button>
