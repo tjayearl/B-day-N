@@ -119,7 +119,7 @@ honesty,
 and real love.
 
 And I promise…
-I would give you my all too.
+I will always give you my all too.
 
 My Nicole.
 My Nila.
