@@ -2,15 +2,18 @@ html,
 body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
     color: white;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
     text-align: center;
-    overflow-y: auto;
 }
 
 /* 🖼️ Background Slideshow */
@@ -70,13 +73,11 @@ body {
     backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 20px;
-    max-width: 400px;
+    max-width: 420px;
     width: 90%;
     position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
+    overflow: visible;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     box-shadow: 
         0 0 20px rgba(0, 212, 255, 0.3),
         0 0 40px rgba(0, 212, 255, 0.2);
@@ -147,9 +148,12 @@ iframe {
         width: 100%;
     }
 
+    body {
+        align-items: flex-start;
+    }
+
     .card {
-        max-height: 85vh;
-        padding-bottom: 40px;
+        margin-top: 40px;
     }
 }
 
