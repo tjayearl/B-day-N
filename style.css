@@ -11,9 +11,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
     text-align: center;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    body {
+        padding: 10px;
+    }
 }
 
 /* 🖼️ Background Slideshow */
@@ -71,10 +84,10 @@ body {
 .card {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    padding: 25px;
+    padding: clamp(15px, 5vw, 30px);
     border-radius: 20px;
-    max-width: 420px;
-    width: 90%;
+    max-width: 500px;
+    width: 100%;
     position: relative;
     overflow: visible;
     box-sizing: border-box;
@@ -86,9 +99,10 @@ body {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: clamp(1.5em, 5vw, 2.5em);
     color: #00d4ff;
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+    margin: 0 0 15px 0;
 }
 
 h2 {
@@ -97,14 +111,14 @@ h2 {
 
 /* Message */
 .message {
-    font-size: 1.1em;
+    font-size: clamp(0.9em, 2vw, 1.1em);
     line-height: 1.6;
 }
 
 /* Button */
 button {
-    padding: 12px 20px;
-    font-size: 1em;
+    padding: clamp(10px, 2.5vw, 12px) clamp(15px, 4vw, 20px);
+    font-size: clamp(0.9em, 2vw, 1em);
     border: none;
     border-radius: 12px;
     background: #00d4ff;
@@ -112,16 +126,33 @@ button {
     cursor: pointer;
     margin-top: 20px;
     transition: 0.3s;
+    max-width: 100%;
 }
 
 button:hover {
     background: #00aacc;
 }
 
+@media (max-width: 480px) {
+    button {
+        width: 100%;
+    }
+}
+
 iframe {
     width: 100%;
+    height: auto;
     border: none;
-    min-height: 152px;
+    min-height: 80px;
+    aspect-ratio: 1 / 1;
+    max-height: 400px;
+}
+
+@media (max-width: 480px) {
+    iframe {
+        min-height: 70px;
+        max-height: 300px;
+    }
 }
 
 .hidden-player {
@@ -130,6 +161,9 @@ iframe {
     transform: translateY(10px);
     transition: all 0.5s ease;
     margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .show-player {
@@ -138,22 +172,34 @@ iframe {
     transform: translateY(0);
 }
 
+.hidden-player button {
+    width: 100%;
+    margin-top: 15px;
+}
+
 /* Mobile */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    button {
-        width: 100%;
-    }
-
     body {
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
     }
 
     .card {
-        margin-top: 40px;
+        margin-top: 10px;
+    }
+
+    #displayMessage {
+        font-size: clamp(0.9em, 4vw, 1.1em);
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 12px;
+    }
+    
+    h1 {
+        margin: 0 0 10px 0;
     }
 }
 
@@ -181,7 +227,7 @@ iframe {
 
 #displayMessage {
     margin-top: 15px;
-    font-size: 1.1em;
+    font-size: clamp(0.9em, 2.5vw, 1.1em);
     line-height: 1.6;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -201,7 +247,7 @@ iframe {
 }
 
 .final-message {
-    font-size: 1.1em !important;
+    font-size: clamp(0.85em, 2vw, 1.1em) !important;
     line-height: 1.8 !important;
     margin-top: 20px !important;
     font-weight: normal !important;
