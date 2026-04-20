@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Nila 🎉</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
+    <div class="bg-slideshow"></div>
     <div class="particles"></div>
 
     <div class="card">
@@ -22,9 +24,10 @@
             </iframe>
         </div>
 
-        <img id="displayImage" class="profile-img" alt="Birthday Moment" style="display:none;">
-
         <button id="actionBtn" onclick="nextMessage()">Start</button>
+        <button id="finalBtn" onclick="goToFinalPage()" style="display:none;">
+            Click Me 🎁
+        </button>
     </div>
 
     <script src="script.js"></script>
